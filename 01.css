@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F280BF;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+}
+
+.center {
+  width: 100%;
+  max-width: 400px;
+  box-shadow:  20px 20px 60px #d97cb1,
+               -20px -20px 60px #ffa8ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.inside {
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(240, 127, 181, 0.2) 0px 1px 3px,
+              rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bolder;
+  color: white;
+  overflow-y: auto;
+  max-height: 90vh;
+
+  /* Oculta scrollbar no WebKit (Chrome, Safari) */
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none;  /* Internet Explorer e Edge antigo */
+}
+
+.inside::-webkit-scrollbar {
+display: none; /* Chrome, Safari, Opera */
+}
+
+.card{
+  background-color: #F280BF;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.logo{
+  color: #2c3434;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
