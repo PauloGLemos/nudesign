@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -15,6 +19,34 @@ h1{
 img{
   border-radius: 5px;
 }
+
+nav{
+  border-radius: 10px;
+  background-color: #F280BF;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #F280BF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #C16698;
+  color: black;
+}
+
 
 .center {
   width: 100%;
@@ -69,7 +101,7 @@ display: none; /* Chrome, Safari, Opera */
 
 .scroll-arrow {
   position: sticky;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 150px;
