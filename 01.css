@@ -8,6 +8,14 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
 }
 
+h1{
+  font-weight: bolder;
+}
+
+img{
+  border-radius: 5px;
+}
+
 .center {
   width: 100%;
   max-width: 400px;
@@ -21,7 +29,7 @@ body {
 
 .inside {
   width: 100%;
-  background-color: white;
+  background-color: #ded9cc;
   box-shadow: rgba(240, 127, 181, 0.2) 0px 1px 3px,
               rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: 10px;
@@ -43,6 +51,7 @@ display: none; /* Chrome, Safari, Opera */
 .card{
   background-color: #F280BF;
   border: none;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -51,4 +60,31 @@ display: none; /* Chrome, Safari, Opera */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.black-card{
+  background-color: #cbc7ba;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.scroll-arrow {
+  position: sticky;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  opacity: 60%;
+  height: auto;
+  z-index: 10;
+  animation: bounce 1.5s infinite;
+}
+
+/* Animação suave de pulo */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
 }
