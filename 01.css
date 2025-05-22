@@ -21,17 +21,22 @@ img{
 }
 
 nav{
-  border-radius: 10px;
   background-color: #F280BF;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
 }
+
+.inside .col {
+  margin-bottom: 20px; /* separa verticalmente cada col */
+}
+
 
 .sticky-nav {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
   background-color: #F280BF;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0px 0px;
+
 }
 
 .nav-btn {
@@ -42,34 +47,29 @@ nav{
   transition: all 0.3s ease;
 }
 
-.nav-btn:hover {
-  background-color: #C16698;
-  color: black;
-}
-
 
 .center {
-  width: 100%;
-  max-width: 400px;
-  box-shadow:  20px 20px 60px #d97cb1,
-               -20px -20px 60px #ffa8ef;
+  max-width: 400px; /* ou sua largura desejada */
+  margin: 0 auto;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   border-radius: 10px;
 }
 
 .inside {
   width: 100%;
   background-color: #ded9cc;
-  box-shadow: rgba(240, 127, 181, 0.2) 0px 1px 3px,
-              rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 0px 0px 10px 10px;
   padding: 10px;
   font-weight: bolder;
   color: white;
   overflow-y: auto;
   max-height: 90vh;
+  padding-top: 15px;
 
   /* Oculta scrollbar no WebKit (Chrome, Safari) */
 scrollbar-width: none; /* Firefox */
