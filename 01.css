@@ -1,3 +1,4 @@
+/* ===== GLOBAL ===== */
 html {
   scroll-behavior: smooth;
 }
@@ -8,35 +9,80 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F280BF;
+  background-color: #F280BF; /* Light mode background */
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  color: #37403F; /* Light mode text */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-h1{
+h1 {
   font-weight: bolder;
 }
 
-img{
+img {
   border-radius: 5px;
 }
 
-nav{
-  background-color: #F280BF;
+nav {
+  background-color: #F280BF; /* Light mode nav */
   box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  color: #37403F;
 }
 
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  width: 50px;
+  height: 24px;
+  background-color: #F280BF; /* Light mode slider background */
+  border-radius: 34px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #37403F; /* Light mode slider circle */
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Slider toggle checked */
+input:checked + .slider {
+  background-color: #2196F3; /* You can adjust if wanted */
+}
+
+input:checked + .slider:before {
+  background-color: #F280BF;
+}
+
+/* ===== LIGHT MODE CONTAINERS ===== */
 .inside .col {
-  margin-bottom: 20px; /* separa verticalmente cada col */
+  margin-bottom: 20px;
 }
-
 
 .sticky-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #F280BF;
-  border-radius: 10px 10px 0px 0px;
-
+  background-color: #F280BF; /* Light mode sticky nav */
+  border-radius: 10px 10px 0 0;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+  color: #37403F;
 }
 
 .nav-btn {
@@ -45,11 +91,11 @@ nav{
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  color: #37403F;
 }
 
-
 .center {
-  max-width: 400px; /* ou sua largura desejada */
+  max-width: 400px;
   margin: 0 auto;
   padding: 10px;
   display: flex;
@@ -61,42 +107,43 @@ nav{
 
 .inside {
   width: 100%;
-  background-color: #ded9cc;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  border-radius: 0px 0px 10px 10px;
-  padding: 10px;
+  background-color: #ded9cc; /* Light mode inside */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+              rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 0 0 10px 10px;
+  padding: 5px 10px 10px 10px;
   font-weight: bolder;
-  color: white;
+  color: #37403F;
   overflow-y: auto;
   max-height: 90vh;
-  padding-top: 15px;
-
-  /* Oculta scrollbar no WebKit (Chrome, Safari) */
-scrollbar-width: none; /* Firefox */
--ms-overflow-style: none;  /* Internet Explorer e Edge antigo */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .inside::-webkit-scrollbar {
-display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
-.card{
-  background-color: #F280BF;
+.card {
+  background-color: #F280BF; /* Light mode card */
   border: none;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: #37403F;
 }
 
-.logo{
+.logo {
   color: #2c3434;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.black-card{
-  background-color: #cbc7ba;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+.black-card {
+  background-color: #cbc7ba; /* Light mode variant */
+  color: #37403F;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+              rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .scroll-arrow {
@@ -111,7 +158,7 @@ display: none; /* Chrome, Safari, Opera */
   animation: bounce 1.5s infinite;
 }
 
-/* Animação suave de pulo */
+/* Animation for bounce */
 @keyframes bounce {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
@@ -119,4 +166,52 @@ display: none; /* Chrome, Safari, Opera */
   50% {
     transform: translateX(-50%) translateY(8px);
   }
+}
+
+/* ===== DARK MODE ===== */
+.dark-mode {
+  background-color: #37403F; /* Dark mode bg */
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  color: #eee !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode nav,
+.dark-mode .sticky-nav {
+  background-color: #1c1c1c !important;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 2px 8px 0px;
+  color: #F280BF;
+}
+
+.dark-mode .inside {
+  background-color: #222 !important;
+  color: #F280BF !important;
+  box-shadow: none;
+}
+
+.dark-mode .card,
+.dark-mode .black-card {
+  background-color: #2a2a2a !important;
+  color: #F280BF !important;
+  box-shadow: none;
+}
+
+.dark-mode .nav-btn {
+  color: #F280BF !important;
+}
+
+.dark-mode h6 {
+  color: #F280BF !important;
+}
+
+.dark-mode .logo {
+  color: #fff !important;
+}
+
+.dark-mode .slider {
+  background-color: #555 !important;
+}
+
+.dark-mode .slider:before {
+  background-color: #F280BF !important;
 }
