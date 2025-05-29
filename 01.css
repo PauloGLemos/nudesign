@@ -47,7 +47,7 @@ nav {
 .slider {
   width: 50px;
   height: 24px;
-  background-color: #F280BF; /* Light mode slider background */
+  background-color: #F280BF;
   border-radius: 34px;
   cursor: pointer;
   position: relative;
@@ -61,14 +61,13 @@ nav {
   width: 18px;
   left: 3px;
   bottom: 3px;
-  background-color: #37403F; /* Light mode slider circle */
+  background-color: #37403F;
   border-radius: 50%;
   transition: 0.4s;
 }
 
-/* Slider toggle checked */
 input:checked + .slider {
-  background-color: #2196F3; /* You can adjust if wanted */
+  background-color: #2196F3;
 }
 
 input:checked + .slider:before {
@@ -85,7 +84,7 @@ input:checked + .slider:before {
   top: 0;
   z-index: 1000;
   background-color: #F280BF;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
   color: #37403F;
   display: flex;
@@ -95,7 +94,6 @@ input:checked + .slider:before {
   height: auto;
 }
 
-
 .nav-btn {
   font-weight: bold;
   text-decoration: none;
@@ -103,29 +101,29 @@ input:checked + .slider:before {
   border-radius: 8px;
   transition: all 0.3s ease;
   color: #37403F;
-  white-space: nowrap; /* Evita quebrar palavras */
+  white-space: nowrap;
   font-size: 1rem;
 }
 
 .center {
-  max-width: 350px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  padding: 0 1rem;
 }
 
 .inside {
   width: 100%;
-  max-width: 600px;
   margin: 0 auto;
   background-color: #ded9cc;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
               rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 0 0 10px 10px;
-  padding: 5px 10px 10px 10px;
+  padding: 1rem;
   font-weight: bolder;
   color: #37403F;
   overflow-y: auto;
@@ -134,17 +132,24 @@ input:checked + .slider:before {
   -ms-overflow-style: none;
 }
 
-
 .inside::-webkit-scrollbar {
   display: none;
 }
 
+.dot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
 .card {
-  background-color: #F280BF; /* Light mode card */
+  background-color: #F280BF;
   border: none;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   color: #37403F;
+  max-width: 100%;
 }
 
 .logo {
@@ -155,7 +160,7 @@ input:checked + .slider:before {
 }
 
 .black-card {
-  background-color: #cbc7ba; /* Light mode variant */
+  background-color: #cbc7ba;
   color: #37403F;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
               rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -185,7 +190,7 @@ input:checked + .slider:before {
 
 /* ===== DARK MODE ===== */
 .dark-mode {
-  background-color: #37403F; /* Dark mode bg */
+  background-color: #37403F;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   color: #eee !important;
   transition: background-color 0.3s, color 0.3s;
@@ -229,4 +234,90 @@ input:checked + .slider:before {
 
 .dark-mode .slider:before {
   background-color: #F280BF !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas maiores (desktops) */
+
+/* Telas até 1024px (tablets e laptops pequenos) */
+@media (max-width: 1024px) {
+  .sticky-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+  }
+
+  .center {
+    max-width: 90%;
+  }
+
+  .inside {
+    max-width: 95%;
+  }
+}
+
+/* Telas até 768px (celulares em paisagem e tablets pequenos) */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .sticky-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .switch {
+    position: static;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  .center {
+    max-width: 100%;
+  }
+
+  .inside {
+    max-width: 100%;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .scroll-arrow {
+    width: 100px;
+  }
+}
+
+/* Telas até 480px (celulares em retrato) */
+@media (max-width: 480px) {
+  .nav-btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .slider {
+    width: 40px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+  }
 }
